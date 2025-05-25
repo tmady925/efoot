@@ -1,0 +1,60 @@
+{
+  "name": "laravel/laravel",
+  "type": "project",
+  "description": "The Laravel Framework.",
+  "keywords": ["framework", "laravel"],
+  "license": "MIT",
+  "require": {
+    "php": "^8.1",
+    "cinetpay/cinetpay-php": "^1.9",
+    "fakerphp/faker": "^1.24",
+    "fideloper/proxy": "^4.4",
+    "fruitcake/laravel-cors": "^2.2",
+    "guzzlehttp/guzzle": "^7.0",
+    "laravel/framework": "^9.0",
+    "laravel/jetstream": "^3.0",
+    "laravel/sanctum": "^3.3",
+    "laravel/tinker": "^2.8",
+    "livewire/livewire": "^2.11",
+    "mews/purifier": "^3.4",
+    "tcg/voyager": "^1.7"
+  },
+  "require-dev": {
+    "nunomaduro/collision": "^7.0",
+    "phpunit/phpunit": "^10.0",
+    "mockery/mockery": "^1.6",
+    "spatie/laravel-ignition": "^1.0"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    },
+    "classmap": [
+      "database/seeders",
+      "database/factories"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "scripts": {
+    "post-autoload-dump": [
+      "@php artisan package:discover --ansi"
+    ],
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php artisan key:generate --ansi"
+    ]
+  }
+}
